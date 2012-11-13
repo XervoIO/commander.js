@@ -1,10 +1,10 @@
 {
     "name": "commander-plus"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "description": "the complete solution for node.js command-line programs"
   , "keywords": ["command", "option", "parser", "prompt", "stdin"]
   , "author": "TJ Holowaychuk <tj@vision-media.ca>"
-  , "contributors" : [ "Charlie Key <charlie@modulus.io>" ]
+  , "contributors" : [ "Charlie Key <charlie@modulus.io>", "Richard Key <richard@modulus.io>" ]
   , "repository": { "type": "git", "url": "https://github.com/onmodulus/commander.js.git" }
   , "dependencies": { "keypress": "0.1.x"}
   , "devDependencies": { "should": ">= 0.0.1" }
