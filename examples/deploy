@@ -13,7 +13,7 @@ program
   .option('-T, --no-tests', 'ignore test hook')
 
 program
-  .command('setup [env]')
+  .command('setup', '[env]')
   .description('run setup commands for all envs')
   .option("-s, --setup_mode [mode]", "Which setup mode to use")
   .action(function(env, options){
@@ -23,7 +23,7 @@ program
   });
 
 program
-  .command('exec <cmd>')
+  .command('exec', '<cmd>')
   .description('execute the given remote cmd')
   .option("-e, --exec_mode <mode>", "Which exec mode to use")
   .action(function(cmd, options){
