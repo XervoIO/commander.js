@@ -1,4 +1,21 @@
 
+1.1.1 / 2012-11-20 
+==================
+
+  * add more sub-command padding
+  * fix .usage() when args are present. Closes #106
+
+1.1.0 / 2012-11-16 
+==================
+
+  * add git-style executable subcommand support. Closes #94
+
+1.0.5 / 2012-10-09 
+==================
+
+  * fix `--name` clobbering. Closes #92
+  * fix examples/help. Closes #89
+
 1.0.4 / 2012-09-03 
 ==================
 

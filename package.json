@@ -1,14 +1,35 @@
 {
-    "name": "commander-plus"
-  , "version": "0.0.4"
-  , "description": "the complete solution for node.js command-line programs"
-  , "keywords": ["command", "option", "parser", "prompt", "stdin"]
-  , "author": "TJ Holowaychuk <tj@vision-media.ca>"
-  , "contributors" : [ "Charlie Key <charlie@modulus.io>", "Richard Key <richard@modulus.io>" ]
-  , "repository": { "type": "git", "url": "https://github.com/onmodulus/commander.js.git" }
-  , "dependencies": { "keypress": "0.1.x"}
-  , "devDependencies": { "should": ">= 0.0.1" }
-  , "scripts": { "test": "make test" }
-  , "main": "index"
-  , "engines": { "node": ">= 0.6.x" }
+  "author": "TJ Holowaychuk <tj@vision-media.ca>", 
+  "contributors": [
+    "Charlie Key <charlie@modulus.io>", 
+    "Richard Key <richard@modulus.io>", 
+    "Matt Hernandez <matt@modulus.io>"
+  ], 
+  "version": "0.0.4",
+  "dependencies": {
+    "keypress": "0.1.x"
+  }, 
+  "description": "the complete solution for node.js command-line programs", 
+  "devDependencies": {
+    "should": ">= 0.0.1"
+  }, 
+  "engines": {
+    "node": ">= 0.6.x"
+  }, 
+  "keywords": [
+    "command", 
+    "option", 
+    "parser", 
+    "prompt", 
+    "stdin"
+  ], 
+  "main": "index", 
+  "name": "commander-plus", 
+  "repository": {
+    "type": "git", 
+    "url": "https://github.com/onmodulus/commander.js.git"
+  }, 
+  "scripts": {
+    "test": "make test"
+  }
 }
