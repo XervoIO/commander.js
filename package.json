@@ -5,7 +5,7 @@
     "Richard Key <richard@modulus.io>", 
     "Matt Hernandez <matt@modulus.io>"
   ], 
-  "version": "0.0.4",
+  "version": "0.0.5",
   "dependencies": {
     "keypress": "0.1.x"
   }, 

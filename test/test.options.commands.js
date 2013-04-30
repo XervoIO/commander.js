@@ -91,13 +91,12 @@ program.commands[1].exec_mode.should.equal("mode7");
 program.commands[1].target.should.equal("target7");
 cmdValue.should.equal("exec7");
 
-var exceptionOccurred = false;
-var oldProcessExit = process.exit;
-var oldConsoleError = console.error;
-process.exit = function() { exceptionOccurred = true; throw new Error(); };
-console.error = function() {};
+program.parse(['node', 'test', '--config', 'conf7', 'do', '--target', 'target7', '-e', 'mode7', 'exec7']);
+program.config.should.equal("conf7");
+program.commands[1].exec_mode.should.equal("mode7");
+program.commands[1].target.should.equal("target7");
+cmdValue.should.equal("exec7");
 
-// Make sure errors are still caught with required values for options
 var exceptionOccurred = false;
 var oldProcessExit = process.exit;
 var oldConsoleError = console.error;
@@ -111,7 +110,7 @@ try {
 }
 
 try {
-    program.parse(['node', 'test', '--config', 'conf', 'exec', '-t', 'target1', 'exec1', '-e']);
+  program.parse(['node', 'test', '--config', 'conf', 'exec', '-t', 'target1', 'exec1', '-e']);
 }
 catch(ex) {
 }
