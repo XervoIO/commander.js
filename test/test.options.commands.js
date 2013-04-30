@@ -16,7 +16,7 @@ var cmdValue = "";
 var customHelp = false;
 
 program
-  .command('setup [env]')
+  .command('setup', '[env]')
   .description('run setup commands for all envs')
   .option("-s, --setup_mode [mode]", "Which setup mode to use")
   .option("-o, --host [host]", "Host to use")
@@ -28,7 +28,7 @@ program
   });
 
 program
-  .command('exec <cmd>')
+  .command('exec|run|do', '<cmd>')
   .description('execute the given remote cmd')
   .option("-e, --exec_mode <mode>", "Which exec mode to use")
   .option("-t, --target [target]", "Target to use")
@@ -85,7 +85,18 @@ program.commands[1].exec_mode.should.equal("mode2");
 program.commands[1].target.should.equal("target1");
 cmdValue.should.equal("exec3");
 
-// Make sure we still catch errors with required values for options
+program.parse(['node', 'test', '--config', 'conf7', 'run', '--target', 'target7', '-e', 'mode7', 'exec7']);
+program.config.should.equal("conf7");
+program.commands[1].exec_mode.should.equal("mode7");
+program.commands[1].target.should.equal("target7");
+cmdValue.should.equal("exec7");
+
+program.parse(['node', 'test', '--config', 'conf7', 'do', '--target', 'target7', '-e', 'mode7', 'exec7']);
+program.config.should.equal("conf7");
+program.commands[1].exec_mode.should.equal("mode7");
+program.commands[1].target.should.equal("target7");
+cmdValue.should.equal("exec7");
+
 var exceptionOccurred = false;
 var oldProcessExit = process.exit;
 var oldConsoleError = console.error;
@@ -99,7 +110,7 @@ try {
 }
 
 try {
-    program.parse(['node', 'test', '--config', 'conf', 'exec', '-t', 'target1', 'exec1', '-e']);
+  program.parse(['node', 'test', '--config', 'conf', 'exec', '-t', 'target1', 'exec1', '-e']);
 }
 catch(ex) {
 }

@@ -1,8 +1,6 @@
-# Commander.js
+# commander-plus
 
   The complete solution for [node.js](http://nodejs.org) command-line interfaces, inspired by Ruby's [commander](https://github.com/visionmedia/commander).
-
- [![Build Status](https://secure.travis-ci.org/visionmedia/commander.js.png)](http://travis-ci.org/visionmedia/commander.js)
 
 ## Installation
 
@@ -42,7 +40,7 @@ console.log('  - %s cheese', program.cheese);
 
  The help information is auto-generated based on the information commander already knows about your program, so the following `--help` info is for free:
 
-```  
+```
  $ ./examples/pizza --help
 
    Usage: pizza [options]
@@ -227,6 +225,14 @@ program.choose(list, function(i){
   console.log('you chose %d "%s"', i, list[i]);
 });
 ```
+
+## .outputHelp()
+
+  Output help information without exiting.
+
+## .help()
+
+  Output help information and exit immediately.
 
 ## Links
 
