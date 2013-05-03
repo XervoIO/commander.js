@@ -166,11 +166,9 @@ Command.prototype.command = function(name, args, desc) {
   args = args.split(/ +/);
   var cmd = new Command(name);
   if (desc) cmd.description(desc);
-  if (desc) this.executables = true;
   this.commands.push(cmd);
   cmd.parseExpectedArgs(args);
   cmd.parent = this;
-  if (desc) return this;
   return cmd;
 };
 
@@ -182,7 +180,7 @@ Command.prototype.command = function(name, args, desc) {
  */
 
 Command.prototype.addImplicitHelpCommand = function() {
-  this.command('help [cmd]', 'display help for [cmd]');
+  this.command('help', '[cmd]', 'display help for [cmd]');
 };
 
 /**
@@ -266,7 +264,7 @@ Command.prototype.action = function(fn) {
     fn.apply(this, args);
   };
 
-  //aliases are split by "|" so we add a different listener for each
+  // Aliases are split by "|" so add a listener for each command.
   this._name.split('|').forEach(function(name) {
     self.parent.on(name, actionHandler);
   });
