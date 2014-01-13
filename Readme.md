@@ -4,7 +4,7 @@
 
 ## Installation
 
-    $ npm install commander
+    $ npm install commander-plus
 
 ## Option parsing
 
@@ -17,7 +17,7 @@
  * Module dependencies.
  */
 
-var program = require('commander');
+var program = require('commander-plus');
 
 program
   .version('0.0.1')
